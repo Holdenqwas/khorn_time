@@ -1,12 +1,13 @@
 import React from "react";
 import RoutePaths from "../widgets/navigation/routes";
-import { Router, RouterProvider } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+
 
 const App = () => {
   return (
-    <React.StrictMode>
-      {RoutePaths}
-    </React.StrictMode>
+    <BrowserRouter>
+      <RoutePaths />
+    </BrowserRouter>
   );
 };
 

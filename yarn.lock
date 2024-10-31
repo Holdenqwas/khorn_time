@@ -429,6 +429,18 @@ dayjs@^1.11.11:
   resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.13.tgz#92430b0139055c3ebb60150aa13e860a4b5a366c"
   integrity sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==
 
+effector-react@^23.2.1:
+  version "23.2.1"
+  resolved "https://registry.yarnpkg.com/effector-react/-/effector-react-23.2.1.tgz#ce772e07e5920d6b3d17c0e1997ff62227b4bcd6"
+  integrity sha512-eyjHm095xgrDNe8wtF60w5AjaF+j4Z6XP/DxW8RvlCK4twQT5mkAbIBJxA7BXKLL74RpySai8QmjVBurzapBCw==
+  dependencies:
+    use-sync-external-store "^1.0.0"
+
+effector@^23.2.3:
+  version "23.2.3"
+  resolved "https://registry.yarnpkg.com/effector/-/effector-23.2.3.tgz#178ec8d8683c14fe26de56fa69a7e20af5282b72"
+  integrity sha512-nBk3pzdJKT/Sn3OhLUurZoxKXUBd+iqiYHNoBRDFc8EE/vXp2JPNsickX59ZjlDbsWZwTMCVV3tovxjRo+vMGQ==
+
 error-stack-parser@^2.0.6:
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/error-stack-parser/-/error-stack-parser-2.1.4.tgz#229cb01cdbfa84440bfa91876285b94680188286"
@@ -914,3 +926,8 @@ typescript@^5.6.3:
   version "5.6.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.6.3.tgz#5f3449e31c9d94febb17de03cc081dd56d81db5b"
   integrity sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==
+
+use-sync-external-store@^1.0.0:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.2.tgz#c3b6390f3a30eba13200d2302dcdf1e7b57b2ef9"
+  integrity sha512-PElTlVMwpblvbNqQ82d2n6RjStvdSoNe9FG28kNfz3WiXilJm4DdNkEzRhCZuIDwY8U08WVihhGR5iRqAwfDiw==
