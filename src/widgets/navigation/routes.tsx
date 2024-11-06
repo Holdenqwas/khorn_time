@@ -3,18 +3,15 @@ import { Routes, Route, Outlet, Link } from "react-router-dom";
 
 import WelcomePage from "../../pages/welcome";
 import NavBar from "./navbar";
+import BlogPage from "../../pages/blog";
 
 
-const RoutePaths = ()=> {
+const RoutePaths = () => {
   return (
     <Routes>
-      <Route path="/" element={<NavBar />}>
-        {/* <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="dashboard" element={<Dashboard />} /> */}
-  
+        <Route path="blog" element={<BlogPage />} />
+        <Route path="/" element={<WelcomePage />}/>
         <Route path="*" element={<WelcomePage />} />
-      </Route>
     </Routes>
   )
 }
