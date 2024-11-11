@@ -4,8 +4,6 @@ import type { MenuProps, MenuTheme } from 'antd';
 import AboutSvg from "../../shared/images/about.svg";
 import BlogSvg from "../../shared/images/blog.svg";
 import ProjectSvg from "../../shared/images/project.svg";
-import SunSvg from "../../shared/images/sun.svg";
-import MoontSvg from "../../shared/images/moon.svg";
 import { Space, Switch, Menu } from 'antd';
 import { Link, Outlet } from 'react-router-dom';
 import { useUnit } from 'effector-react';
