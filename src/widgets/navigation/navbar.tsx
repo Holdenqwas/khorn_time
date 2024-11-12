@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
-import { MoonOutlined, BulbOutlined } from '@ant-design/icons';
+import { MoonOutlined, BulbOutlined, QuestionCircleOutlined, BookOutlined, BugOutlined } from '@ant-design/icons';
 import type { MenuProps, MenuTheme } from 'antd';
 import AboutSvg from "../../shared/images/about.svg";
 import BlogSvg from "../../shared/images/blog.svg";
 import ProjectSvg from "../../shared/images/project.svg";
-import { Space, Switch, Menu } from 'antd';
+import { Space, Switch, Menu, theme } from 'antd';
 import { Link, Outlet } from 'react-router-dom';
-import { useUnit } from 'effector-react';
-import themeStore from '../../shared/model/theme';
+
 
 type MenuItem = Required<MenuProps>['items'][number];
+export interface NavBarProps {
+    toggleTheme: () => void;
+}
 
-
-const NavBar: React.FC = () => {
+const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
     const [current, setCurrent] = useState('about_me');
-    const theme = useUnit(themeStore.theme);
-    const toggleTheme = useUnit(themeStore.toggleTheme);
 
     const onClick: MenuProps['onClick'] = (e) => {
         console.log('click ', e);
@@ -23,30 +22,34 @@ const NavBar: React.FC = () => {
     };
 
     const changeTheme = (value: boolean) => {
-        toggleTheme();
-      };
-    
+        props.toggleTheme();
+    };
+
+    const {
+        token: { colorIcon },
+    } = theme.useToken();
+
     const items: MenuItem[] = [
         {
             label: (
                 <Link to={""}>Обо мне</Link>
             ),
             key: 'about_me',
-            icon: <img src={AboutSvg} alt="About" className={theme == "dark" ? "light-color" : undefined}/>,
+            icon: <QuestionCircleOutlined />,
         },
         {
             label: (
                 <Link to={"blog"}>Блог</Link>
             ),
             key: 'blog',
-            icon: <img src={BlogSvg} alt="Blog" className={theme == "dark" ? "light-color" : undefined}/>,
+            icon: <BookOutlined />,
         },
         {
             label: (
                 <Link to={"project"}>Проекты</Link>
             ),
             key: 'Project',
-            icon: <img src={ProjectSvg} alt="Project" className={theme == "dark" ? "light-color" : undefined}/>,
+            icon: <BugOutlined />,
         },
         {
             label:
@@ -65,8 +68,7 @@ const NavBar: React.FC = () => {
         <Menu onClick={onClick}
             selectedKeys={[current]}
             mode="horizontal"
-            items={items}
-            theme={theme as MenuTheme}/>
+            items={items} />
     );
 };
 

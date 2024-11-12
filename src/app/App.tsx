@@ -1,40 +1,46 @@
 import React from "react";
-import { ConfigProvider, Layout, Menu, theme } from 'antd';
+import { ConfigProvider, Flex, Layout, theme } from 'antd';
 
-const { Header, Content, Footer } = Layout;
+const { Content, Footer } = Layout;
 import RoutePaths from "../widgets/navigation/routes";
 import { BrowserRouter } from "react-router-dom";
 import NavBar from "../widgets/navigation/navbar";
-
+import { useUnit } from 'effector-react';
+import themeStore from '../shared/model/theme';
 
 const App = () => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
+
+  const themeValue = useUnit(themeStore.theme);
+  const toggleTheme = useUnit(themeStore.toggleTheme);
+
   return (
     <ConfigProvider
       theme={{
-        algorithm: theme.darkAlgorithm,
+        algorithm: themeValue,
       }}
     >
-      <Layout>
+      <Layout style={{ minHeight: '100vh' }}> {/* Ensure Layout takes full viewport height */}
         <BrowserRouter>
-          <NavBar />
-          <Content style={{ padding: '0 48px', margin: '16px 0' }}>
-            <div
-              style={{
-                background: colorBgContainer,
-                minHeight: 280,
-                padding: 24,
-                borderRadius: borderRadiusLG,
-              }}
-            >
-              <RoutePaths />
-            </div>
-          </Content>
-          <Footer style={{ textAlign: 'center' }}>
-            Ant Design ©{new Date().getFullYear()} Created by Ant UED
-          </Footer>
+          <NavBar toggleTheme={toggleTheme} />
+          <Flex gap="middle" vertical style={{ flex: 1 }}> {/* Allow Flex to take full space */}
+            <Flex flex={'1 1 auto'} style={{ width: '100%' }}> {/* Adjust Flex for full width */}
+              <Content style={{ flex: '1 1 auto'}}>
+                <Layout
+                  style={{ padding: '24px 0', borderRadius: borderRadiusLG }}
+                >
+                  <RoutePaths />
+                </Layout>
+              </Content>
+            </Flex>
+            <Flex flex={'0 0 auto'} justify="center"> {/* Center the Footer */}
+              <Footer style={{ textAlign: 'center' }}>
+                Anton Khorn {new Date().getFullYear()}
+              </Footer>
+            </Flex>
+          </Flex>
         </BrowserRouter>
       </Layout>
     </ConfigProvider>
