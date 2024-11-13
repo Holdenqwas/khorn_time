@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MoonOutlined, BulbOutlined, QuestionCircleOutlined, BookOutlined, BugOutlined } from '@ant-design/icons';
+import { MoonOutlined, BulbOutlined, QuestionCircleOutlined, BookOutlined, BugOutlined, HomeOutlined } from '@ant-design/icons';
 import type { MenuProps, MenuTheme } from 'antd';
 import AboutSvg from "../../shared/images/about.svg";
 import BlogSvg from "../../shared/images/blog.svg";
@@ -11,10 +11,11 @@ import { Link, Outlet } from 'react-router-dom';
 type MenuItem = Required<MenuProps>['items'][number];
 export interface NavBarProps {
     toggleTheme: () => void;
+    isLight: boolean;
 }
 
 const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
-    const [current, setCurrent] = useState('about_me');
+    const [current, setCurrent] = useState('welcome');
 
     const onClick: MenuProps['onClick'] = (e) => {
         console.log('click ', e);
@@ -32,7 +33,14 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
     const items: MenuItem[] = [
         {
             label: (
-                <Link to={""}>Обо мне</Link>
+                <Link to={""}>Главная</Link>
+            ),
+            key: 'welcome',
+            icon: <HomeOutlined />,
+        },
+        {
+            label: (
+                <Link to={"about_me"}>Обо мне</Link>
             ),
             key: 'about_me',
             icon: <QuestionCircleOutlined />,
@@ -46,9 +54,9 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
         },
         {
             label: (
-                <Link to={"project"}>Проекты</Link>
+                <Link to={"projects"}>Проекты</Link>
             ),
-            key: 'Project',
+            key: 'projects',
             icon: <BugOutlined />,
         },
         {
@@ -56,7 +64,7 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
                 (<Switch
                     checkedChildren={<BulbOutlined />}
                     unCheckedChildren={<MoonOutlined />}
-                    defaultChecked
+                    defaultChecked={props.isLight}
                     onChange={changeTheme}
                 />),
             key: 'theme',
