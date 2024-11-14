@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { MoonOutlined, BulbOutlined, QuestionCircleOutlined, BookOutlined, BugOutlined, HomeOutlined } from '@ant-design/icons';
-import type { MenuProps, MenuTheme } from 'antd';
-import AboutSvg from "../../shared/images/about.svg";
-import BlogSvg from "../../shared/images/blog.svg";
-import ProjectSvg from "../../shared/images/project.svg";
-import { Space, Switch, Menu, theme } from 'antd';
-import { Link, Outlet } from 'react-router-dom';
+import type { MenuProps } from 'antd';
+import { Switch, Menu, theme } from 'antd';
+import { Link } from 'react-router-dom';
+import { useUnit } from 'effector-react';
+import locationStore from '../../shared/model/location';
 
 
 type MenuItem = Required<MenuProps>['items'][number];
@@ -15,11 +14,11 @@ export interface NavBarProps {
 }
 
 const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
-    const [current, setCurrent] = useState('welcome');
+    const location = useUnit(locationStore.location);
+    const setLocation = useUnit(locationStore.setLocation);
 
     const onClick: MenuProps['onClick'] = (e) => {
-        console.log('click ', e);
-        setCurrent(e.key);
+        setLocation(e.key);
     };
 
     const changeTheme = (value: boolean) => {
@@ -29,6 +28,7 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
     const {
         token: { colorIcon },
     } = theme.useToken();
+
 
     const items: MenuItem[] = [
         {
@@ -74,9 +74,13 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
 
     return (
         <Menu onClick={onClick}
-            selectedKeys={[current]}
+            selectedKeys={[location]}
             mode="horizontal"
-            items={items} />
+            items={items}
+            style={{
+                position: "fixed",
+                top: "0", width: "100%", overflow: "hidden", zIndex: "99"
+            }} />
     );
 };
 

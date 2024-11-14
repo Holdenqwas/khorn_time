@@ -26,7 +26,7 @@ const App = () => {
       <Layout style={{ minHeight: '100vh' }}> {/* Ensure Layout takes full viewport height */}
         <BrowserRouter>
           <NavBar toggleTheme={toggleTheme} isLight={isLight}/>
-          <Flex gap="middle" vertical style={{ flex: 1 }}> {/* Allow Flex to take full space */}
+          <Flex gap="middle" vertical style={{ flex: 1, marginTop: "5vh" }}> {/* Allow Flex to take full space */}
             <Flex flex={'1 1 auto'} style={{ width: '100%' }}> {/* Adjust Flex for full width */}
               <Content style={{ flex: '1 1 auto'}}>
                 <Layout

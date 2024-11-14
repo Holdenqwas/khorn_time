@@ -1,9 +1,11 @@
 import React from "react";
 import { Layout, Typography, Card, Row, Col, Divider, Image, Button, Space, Flex, Tag } from "antd";
-import { GithubOutlined, LinkedinOutlined, TwitterOutlined } from '@ant-design/icons';
+import { DownloadOutlined, GithubOutlined, LinkedinOutlined, TwitterOutlined } from '@ant-design/icons';
 import Avataaar from '../../shared/images/avataaars.png'
 import { useNavigate } from "react-router-dom";
 import Tags from "../../shared/ui/tags";
+import locationStore from "../../shared/model/location";
+import { useUnit } from "effector-react";
 
 const { Content } = Layout;
 const { Title, Paragraph } = Typography;
@@ -13,12 +15,14 @@ const WelcomePage = () => {
     width: '100%',
     textAlign: 'left',
   };
-
+  const setLocation = useUnit(locationStore.setLocation);
   const navigate = useNavigate();
 
   const handleNavigate = (path: string) => {
+    setLocation(path);
     navigate(path);
   };
+
   return (
     <Layout>
       <Content style={{ maxWidth: "800px", margin: "auto" }}>
@@ -31,7 +35,12 @@ const WelcomePage = () => {
           <Title level={4} style={{ textAlign: "left" }}>Я инженер-программист, backend-разработчик на python,
             react-разработчик, <br />а еще нефтяник и геймер.</Title>
           <Title level={4} style={{ textAlign: "left" }}>Сейчас работаю программистом в нефтяной компании ПАО "Татнефть"</Title>
-
+          <Divider />
+          <Flex gap="small" wrap>
+            <Button icon={<DownloadOutlined />} onClick={() => handleNavigate("blog")}>Блог</Button>
+            <Button icon={<DownloadOutlined />} onClick={() => handleNavigate("about_me")}>Обо мне</Button>
+            <Button icon={<DownloadOutlined />} onClick={() => handleNavigate("uses")}>Что использую</Button>
+          </Flex>
           <Divider />
           <Card title="Последние статьи">
             <Card.Grid style={gridStyle} onClick={() => handleNavigate("splite_keyboard")}>
