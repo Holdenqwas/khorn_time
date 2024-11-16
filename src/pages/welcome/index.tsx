@@ -1,6 +1,6 @@
 import React from "react";
-import { Layout, Typography, Card, Row, Col, Divider, Image, Button, Space, Flex, Tag } from "antd";
-import { DownloadOutlined, GithubOutlined, LinkedinOutlined, TwitterOutlined } from '@ant-design/icons';
+import { Layout, Typography, Card, Divider, Image, Button, Flex } from "antd";
+import { DownloadOutlined } from '@ant-design/icons';
 import Avataaar from '../../shared/images/avataaars.png'
 import { useNavigate } from "react-router-dom";
 import Tags from "../../shared/ui/tags";
@@ -43,7 +43,7 @@ const WelcomePage = () => {
           </Flex>
           <Divider />
           <Card title="Последние статьи">
-            <Card.Grid style={gridStyle} onClick={() => handleNavigate("splite_keyboard")}>
+            <Card.Grid style={gridStyle} onClick={() => handleNavigate("splite_keyboard")} hoverable={true}>
               <Title level={5}>Split keyboard, или Сколько пробегают мои пальцы
               </Title>
               <Flex gap="4px 0" wrap>
