@@ -1,21 +1,10 @@
-import React from 'react';
-import { Layout, Typography, Card, Row, Col, Divider, Image, Button, Space, Flex } from "antd";
-import { GithubOutlined, GoogleOutlined } from '@ant-design/icons';
-import Avataaar from '../../shared/images/avataaars.png'
-import telegram from '../../shared/images/telegram.svg'
-import leetcode from '../../shared/images/leetcode.svg'
-import stepik from '../../shared/images/stepik.svg'
+import { Layout, Typography, Card, Space } from "antd";
 import Link from "antd/es/typography/Link";
 
 const { Content } = Layout;
-const { Title, Paragraph } = Typography;
+const { Title } = Typography;
 
 const UsesPage = () => {
-  const gridStyle: React.CSSProperties = {
-    width: '100%',
-    textAlign: 'left',
-  };
-
   return (
     <Layout>
       <Content style={{ maxWidth: "800px", margin: "auto" }}>

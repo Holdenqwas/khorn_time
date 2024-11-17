@@ -18,12 +18,14 @@ import { Tag } from "antd";
 // purple 
 
 class Tags {
-    static programming = <Tag bordered={false} color="processing">
+    static programming = <Tag bordered={true} color="processing">
         программирование
     </Tag>;
-
-    static devices = <Tag bordered={false} color="success">
+    static devices = <Tag bordered={true} color="success">
         переферия
+    </Tag>
+    static opinion = <Tag bordered={true} color="purple">
+        мнение
     </Tag>
 };
 

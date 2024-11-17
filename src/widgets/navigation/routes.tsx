@@ -11,13 +11,17 @@ import SpliteKeyboardPage from "../../pages/blog/splite_keyboard";
 const RoutePaths = () => {
   return (
     <Routes>
-      <Route path="blog" element={<BlogPage />} />
-      <Route path="about_me" element={<AboutMePage />} />
-      <Route path="projects" element={<ProjectsPage />} />
-      <Route path="uses" element={<UsesPage />} />
-      <Route path="/" element={<WelcomePage />} />
-      <Route path="*" element={<WelcomePage />} />
-      <Route path="splite_keyboard" element={<SpliteKeyboardPage />} />
+      <Route path="/" element={<WelcomePage />} >
+        <Route index element={<WelcomePage />} />
+        <Route path="about_me" element={<AboutMePage />} />
+        <Route path="projects" element={<ProjectsPage />} />
+        <Route path="uses" element={<UsesPage />} />
+
+        <Route path="*" element={<WelcomePage />} />
+        <Route path="blog" element={<BlogPage />} >
+          <Route path="splite_keyboard" element={<SpliteKeyboardPage />} />
+        </Route>
+      </Route>
     </Routes>
   )
 }
