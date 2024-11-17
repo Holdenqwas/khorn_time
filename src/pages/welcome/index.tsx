@@ -44,7 +44,7 @@ const WelcomePage = () => {
           <Divider />
           <Card title="Последние статьи">
             <Card.Grid style={gridStyle} onClick={() => handleNavigate("/blog/splite_keyboard")} hoverable={true}>
-              <Title level={5}>Split keyboard, или Сколько пробегают мои пальцы
+              <Title level={5}>Split keyboard, или Сколько пробегают мои пальцы (В процессе написания)
               </Title>
               <Flex gap="4px 0" wrap>
                 {Tags.devices}

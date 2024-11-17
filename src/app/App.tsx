@@ -1,7 +1,6 @@
-import React from "react";
 import { ConfigProvider, Flex, Layout, theme } from 'antd';
 
-const { Content, Footer } = Layout;
+const { Content } = Layout;
 import RoutePaths from "../widgets/navigation/routes";
 import { BrowserRouter } from "react-router-dom";
 import NavBar from "../widgets/navigation/navbar";
@@ -11,7 +10,7 @@ import FooterClass from "../widgets/navigation/footer";
 
 const App = () => {
   const {
-    token: { colorBgContainer, borderRadiusLG },
+    token: { borderRadiusLG },
   } = theme.useToken();
 
   const themeValue = useUnit(themeStore.theme);
@@ -24,11 +23,11 @@ const App = () => {
         algorithm: themeValue,
       }}
     >
-      <Layout style={{ minHeight: '100vh' }}> {/* Ensure Layout takes full viewport height */}
+      <Layout style={{ minHeight: '100vh' }}>
         <BrowserRouter>
           <NavBar toggleTheme={toggleTheme} isLight={isLight} />
-          <Flex gap="middle" vertical style={{ flex: 1, marginTop: "5vh" }}> {/* Allow Flex to take full space */}
-            <Flex flex={'1 1 auto'} style={{ width: '100%' }}> {/* Adjust Flex for full width */}
+          <Flex gap="middle" vertical style={{ flex: 1, marginTop: "5vh" }}>
+            <Flex flex={'1 1 auto'} style={{ width: '100%' }}>
               <Content style={{ flex: '1 1 auto' }}>
                 <Layout
                   style={{ padding: '24px 0', borderRadius: borderRadiusLG }}

@@ -19,7 +19,7 @@ const BlogPage = () => {
           <Title level={2} style={{ textAlign: "center" }}>Что использую</Title>
           <Card title="Cтатьи">
             <Card.Grid style={gridStyle} onClick={() => navigate("splite_keyboard")} hoverable={true}>
-              <Title level={5}>Split keyboard, или Сколько пробегают мои пальцы
+              <Title level={5}>Split keyboard, или Сколько пробегают мои пальцы (В процессе написания)
               </Title>
               <Flex gap="4px 0" wrap>
                 {Tags.devices}

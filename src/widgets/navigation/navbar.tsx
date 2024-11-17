@@ -1,10 +1,11 @@
 import React from 'react';
 import { MoonOutlined, BulbOutlined, QuestionCircleOutlined, BookOutlined, BugOutlined, HomeOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { Switch, Menu, theme } from 'antd';
-import { Link } from 'react-router-dom';
+import { Switch, Menu, theme, Image } from 'antd';
+import { Link, useNavigate } from 'react-router-dom';
 import { useUnit } from 'effector-react';
 import locationStore from '../../shared/model/location';
+import logo from '../../shared/images/logo.png'
 
 
 type MenuItem = Required<MenuProps>['items'][number];
@@ -14,11 +15,19 @@ export interface NavBarProps {
 }
 
 const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
+    const navigate = useNavigate();
+
     const location = useUnit(locationStore.location);
     const setLocation = useUnit(locationStore.setLocation);
 
     const onClick: MenuProps['onClick'] = (e) => {
-        setLocation(e.key);
+        if (e.key == 'logo') {
+            navigate("");
+            setLocation('welcome');
+        }
+        else {
+            setLocation(e.key);
+        }
     };
 
     const changeTheme = (value: boolean) => {
@@ -31,6 +40,13 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
 
 
     const items: MenuItem[] = [
+        {
+            label:
+                (<div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <Image width={40} src={logo} alt="A" preview={false} />
+                </div>),
+            key: 'logo',
+        },
         {
             label: (
                 <Link to={""}>Главная</Link>
