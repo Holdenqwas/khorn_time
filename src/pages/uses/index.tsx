@@ -21,8 +21,8 @@ const UsesPage = () => {
       <Content style={{ maxWidth: "800px", margin: "auto" }}>
         <Card>
           <Title level={2} style={{ textAlign: "center" }}>Что использую</Title>
-          <Card title="Периферийные устройства">
 
+          <Card title="Периферийные устройства">
             <ul>
               <Space direction="vertical" size="middle" style={{ display: 'flex' }}>
                 <li>
@@ -57,7 +57,62 @@ const UsesPage = () => {
                 </li>
               </Space>
             </ul>
+          </Card>
 
+          <Card title="Продуктивность">
+            <ul>
+              <Space direction="vertical" size="middle" style={{ display: 'flex' }}>
+                <li>
+                  <Link
+                    href="https://obsidian.md/" target="_blank" strong>
+                    Обсидиан
+                  </Link> - вся база знаний у меня там, особоенно удобно с использованием <Link
+                    href="https://habr.com/ru/articles/843288/" target="_blank" strong>
+                    гит синхронизации
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://www.onenote.com/?public=1&wdorigin=ondcauth2&wdorigin=ondc" target="_blank" strong>
+                    OneNote
+                  </Link> - бесконечный черновик для все, скриншоты, записи, рисование
+                </li>
+                <li>
+                  <Link
+                    href="https://timeto.me/" target="_blank" strong>
+                    timeto.me
+                  </Link> - идеальный трекер времени, почти ничего лишнего
+                </li>
+              </Space>
+            </ul>
+          </Card>
+
+          <Card title="Программирование">
+            <ul>
+              <Space direction="vertical" size="middle" style={{ display: 'flex' }}>
+                <li>
+                  <Link
+                    href="https://code.visualstudio.com/" target="_blank" strong>
+                    VSCode
+                  </Link> - классика IDE в стандартной теме Dark Modern c иконками <Link
+                    href="https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons" target="_blank" strong>
+                    vscode-icons
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://www.jetbrains.com/ru-ru/pycharm/" target="_blank" strong>
+                    PyCharm
+                  </Link> - на питоне пишу в пайчарме, для питона она хороша
+                </li>
+                <li>
+                  <Link
+                    href="https://dbeaver.io/" target="_blank" strong>
+                    DBeaver
+                  </Link> - vscode в мире утил для баз данных
+                </li>
+              </Space>
+            </ul>
           </Card>
         </Card>
       </Content>

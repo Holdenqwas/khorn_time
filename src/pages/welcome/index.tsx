@@ -1,6 +1,6 @@
 import React from "react";
 import { Layout, Typography, Card, Divider, Image, Button, Flex } from "antd";
-import { DownloadOutlined } from '@ant-design/icons';
+import { BookOutlined, QuestionCircleOutlined, ToolOutlined } from '@ant-design/icons';
 import Avataaar from '../../shared/images/avataaars.png'
 import { useNavigate } from "react-router-dom";
 import Tags from "../../shared/ui/tags";
@@ -37,9 +37,9 @@ const WelcomePage = () => {
           <Title level={4} style={{ textAlign: "left" }}>Сейчас работаю программистом в нефтяной компании ПАО "Татнефть"</Title>
           <Divider />
           <Flex gap="small" wrap>
-            <Button icon={<DownloadOutlined />} onClick={() => handleNavigate("blog")}>Блог</Button>
-            <Button icon={<DownloadOutlined />} onClick={() => handleNavigate("about_me")}>Обо мне</Button>
-            <Button icon={<DownloadOutlined />} onClick={() => handleNavigate("uses")}>Что использую</Button>
+            <Button icon={<BookOutlined />} onClick={() => handleNavigate("blog")}>Блог</Button>
+            <Button icon={<QuestionCircleOutlined />} onClick={() => handleNavigate("about_me")}>Обо мне</Button>
+            <Button icon={<ToolOutlined />} onClick={() => handleNavigate("uses")}>Что использую</Button>
           </Flex>
           <Divider />
           <Card title="Последние статьи">
