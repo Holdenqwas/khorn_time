@@ -6,6 +6,7 @@ import AboutMePage from "../../pages/about_me";
 import ProjectsPage from "../../pages/projects";
 import UsesPage from "../../pages/uses";
 import SpliteKeyboardPage from "../../pages/blog/splite_keyboard";
+import ConnectAlicePage from "../../pages/connect_alice";
 
 
 const RoutePaths = () => {
@@ -15,6 +16,7 @@ const RoutePaths = () => {
       <Route path="about_me" element={<AboutMePage />} />
       <Route path="projects" element={<ProjectsPage />} />
       <Route path="uses" element={<UsesPage />} />
+      <Route path="connect_alice" element={<ConnectAlicePage />} />
 
       <Route path="*" element={<WelcomePage />} />
       <Route path="blog" element={<BlogPage />} />
