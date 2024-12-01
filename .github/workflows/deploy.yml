@@ -25,7 +25,7 @@ jobs:
       - name: Deploy to server
         run: |
           echo "Starting deployment..." 
-          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "export NVM_DIR="$HOME/.nvm"; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; cd /home/${{ secrets.SSH_USER }}/projects/khorn_time && git pull origin master && yarn build && cp -r /home/${{ secrets.SSH_USER }}/projects/khorn_time/dist/* /var/www/admin/data/www/khorn.pro/ && service nginx reload && systemctl restart nginx" 
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 'export NVM_DIR="$HOME/.nvm"; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; cd /home/${{ secrets.SSH_USER }}/projects/khorn_time && git pull origin master && yarn build && cp -r /home/${{ secrets.SSH_USER }}/projects/khorn_time/dist/* /var/www/admin/data/www/khorn.pro/ && service nginx reload && systemctl restart nginx'
           echo "Deployment completed."
       - name: cleanup keys
         if: always()
