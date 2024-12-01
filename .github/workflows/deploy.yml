@@ -24,7 +24,7 @@ jobs:
           ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
       - name: Deploy to server
         run: |
-          echo "Starting deployment...1"
+          echo "Starting deployment...2"
           ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /home/${{ secrets.SSH_USER }}/projects/khorn_time && git pull origin master && yarn -V && node -V" 
           ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /home/${{ secrets.SSH_USER }}/projects/khorn_time && yarn build && cp -r /home/${{ secrets.SSH_USER }}/projects/khorn_time/dist/* /var/www/admin/data/www/khorn.pro/ && service nginx reload && systemctl restart nginx" 
           echo "Deployment completed."
