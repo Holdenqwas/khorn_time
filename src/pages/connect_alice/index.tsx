@@ -30,7 +30,7 @@ const ConnectAlicePage = () => {
         values.scope = scope || '';
         console.log('Success:', values);
 
-        fetch('https://127.0.0.1:5000/login', {
+        fetch(process.env.PUBLIC_BACKEND_URL + 'login', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
