@@ -30,6 +30,20 @@ const ConnectAlicePage = () => {
         values.scope = scope || '';
         console.log('Success:', values);
 
+        fetch('https:://example.com/script404')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Ошибка запроса');
+            }
+            return response.text();
+        })
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+
         fetch(process.env.PUBLIC_BACKEND_URL + 'login', {
             method: 'POST',
             headers: {
@@ -45,7 +59,12 @@ const ConnectAlicePage = () => {
                   });
                 throw new Error('Network response was not ok ' + response.statusText);
             }
-            message.success('Бот успешно привязан');
+            return response.json();
+
+        })
+        .then(data => {
+            // message.success('Бот успешно привязан');
+            window.location.href = data.url;
         })
         .catch(error => {
             console.error('There has been a problem with your fetch operation:', error);
