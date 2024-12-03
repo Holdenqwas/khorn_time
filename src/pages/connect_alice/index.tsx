@@ -32,6 +32,7 @@ const ConnectAlicePage = () => {
 
         fetch(process.env.PUBLIC_BACKEND_URL + 'login', {
             method: 'POST',
+            redirect: "follow",
             headers: {
               'Content-Type': 'application/json'
             },
@@ -45,7 +46,7 @@ const ConnectAlicePage = () => {
                   });
                 throw new Error('Network response was not ok ' + response.statusText);
             }
-            return response.json();
+            // return response.json();
 
         })
         // .then(data => {
