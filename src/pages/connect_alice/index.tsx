@@ -46,14 +46,14 @@ const ConnectAlicePage = () => {
                   });
                 throw new Error('Network response was not ok ' + response.statusText);
             }
-            // return response.json();
+            return response.json();
 
         })
-        // .then(data => {
-        //     // message.success('Бот успешно привязан');
+        .then(data => {
+            // message.success('Бот успешно привязан');
 
-        //     window.location.href = data.url;
-        // })
+            window.location.href = data.url;
+        })
         .catch(error => {
             console.error('There has been a problem with your fetch operation:', error);
         });
