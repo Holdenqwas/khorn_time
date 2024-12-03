@@ -8,6 +8,7 @@ type FieldType = {
     state?: string;
     client_id?: string;
     scope?: string;
+    redirect_uri?: string;
 };
 
 const { Content } = Layout;
@@ -18,6 +19,7 @@ const ConnectAlicePage = () => {
     const state = queryParams.get('state');
     const client_id = queryParams.get('client_id');
     const scope = queryParams.get('scope');
+    const redirect_uri = queryParams.get('redirect_uri');
 
     // const [messageApi, contextHolder] = message.useMessage();
 
@@ -28,6 +30,7 @@ const ConnectAlicePage = () => {
         values.state = state || '';
         values.client_id = client_id || '';
         values.scope = scope || '';
+        values.redirect_uri = redirect_uri || '';
         console.log('Success:', values);
 
         fetch(process.env.PUBLIC_BACKEND_URL + 'login', {
@@ -51,8 +54,12 @@ const ConnectAlicePage = () => {
         })
         .then(data => {
             // message.success('Бот успешно привязан');
+            const redirectUrl = `${redirect_uri}?code=${data.code}&state=${state}&client_id=${client_id}&scope=${scope}`;
 
-            window.location.href = data.url;
+            // Редирект на URI Диалогов
+            window.location.href = redirectUrl;
+
+            // window.location.href = data.url;
         })
         .catch(error => {
             console.error('There has been a problem with your fetch operation:', error);
