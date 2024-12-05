@@ -49,17 +49,6 @@ const ConnectAlicePage = () => {
                   });
                 throw new Error('Network response was not ok ' + response.statusText);
             }
-            return response.json();
-
-        })
-        .then(data => {
-            // message.success('Бот успешно привязан');
-            const redirectUrl = `${redirect_uri}?code=${data.code}&state=${state}&client_id=${client_id}&scope=${scope}`;
-
-            // Редирект на URI Диалогов
-            window.location.href = redirectUrl;
-
-            // window.location.href = data.url;
         })
         .catch(error => {
             console.error('There has been a problem with your fetch operation:', error);
