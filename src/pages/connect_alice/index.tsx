@@ -49,6 +49,12 @@ const ConnectAlicePage = () => {
                   });
                 throw new Error('Network response was not ok ' + response.statusText);
             }
+            return response.json();
+
+        })
+        .then(data => {
+            // Редирект на URI Диалогов
+            window.location.href = data.url;
         })
         .catch(error => {
             console.error('There has been a problem with your fetch operation:', error);
