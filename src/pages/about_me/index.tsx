@@ -87,7 +87,7 @@ const AboutMePage = () => {
           <Row>
             <Col span={12}>
               <Card title="Backend" bordered={false}>
-                Последний год делал приложение на FastAPI, c базой на PostgreSQL, использовал ORM бибилиотеку SQLAlchemy.
+                Последний год делал приложение на FastAPI, c базой на PostgreSQL, использовал ORM библиотеку SQLAlchemy.
               </Card>
             </Col>
             <Col span={12}>
