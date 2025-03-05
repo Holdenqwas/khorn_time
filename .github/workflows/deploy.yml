@@ -22,11 +22,11 @@ jobs:
           install -m 600 -D /dev/null ~/.ssh/id_rsa
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
-      - name: Deploy to server
-        run: |
-          echo "Starting deployment..." 
-          ssh -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 'export NVM_DIR="$HOME/.nvm"; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; cd /home/${{ secrets.SSH_USER }}/projects/khorn_time && git pull origin master && yarn build && rm -r /var/www/khorn.pro/* && cp -r /home/${{ secrets.SSH_USER }}/projects/khorn_time/dist/* /var/www/khorn.pro/ && /usr/sbin/service nginx reload && /usr/sbin/service nginx restart'
-          echo "Deployment completed."
+      # - name: Deploy to server
+      #   run: |
+      #     echo "Starting deployment..." 
+      #     ssh -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 'export NVM_DIR="$HOME/.nvm"; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; cd /home/${{ secrets.SSH_USER }}/projects/khorn_time && git pull origin master && yarn build && rm -r /var/www/khorn.pro/* && cp -r /home/${{ secrets.SSH_USER }}/projects/khorn_time/dist/* /var/www/khorn.pro/ && /usr/sbin/service nginx reload && /usr/sbin/service nginx restart'
+      #     echo "Deployment completed."
       - name: cleanup keys
         if: always()
         run: rm -rf ~/.ssh
