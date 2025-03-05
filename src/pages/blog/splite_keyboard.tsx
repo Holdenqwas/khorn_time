@@ -12,8 +12,7 @@ const SpliteKeyboardPage = () => {
     <Layout>
       <Content style={{ maxWidth: "800px", margin: "auto" }}>
         <Card>
-          <Title level={2} style={{ textAlign: "center" }}>Split keyboard, или Сколько пробегают мои пальцы (В процессе написания)</Title>
-
+          <Title level={2} style={{ textAlign: "center" }}>Corne клавиатура</Title>
         </Card>
       </Content>
     </Layout >
