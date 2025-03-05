@@ -44,13 +44,13 @@ const WelcomePage = () => {
           <Divider />
           <Card title="Последние статьи">
             <Card.Grid style={gridStyle} onClick={() => handleNavigate("/blog/splite_keyboard")} hoverable={true}>
-              <Title level={5}>Split keyboard, или Сколько пробегают мои пальцы (В процессе написания)
+              <Title level={5}>Corne клавиатура
               </Title>
               <Flex gap="4px 0" wrap>
                 {Tags.devices}
                 {Tags.programming}
               </Flex>
-              <Paragraph style={{ marginTop: "10px" }}>11 ноября 2024 г.</Paragraph>
+              <Paragraph style={{ marginTop: "10px" }}>5 февраля 2025 г.</Paragraph>
             </Card.Grid>
           </Card>
         </Card>

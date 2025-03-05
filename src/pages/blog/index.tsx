@@ -16,16 +16,16 @@ const BlogPage = () => {
     <Layout>
       <Content style={{ maxWidth: "800px", margin: "auto" }}>
         <Card>
-          <Title level={2} style={{ textAlign: "center" }}>Что использую</Title>
+          <Title level={2} style={{ textAlign: "center" }}>Блог</Title>
           <Card title="Cтатьи">
             <Card.Grid style={gridStyle} onClick={() => navigate("splite_keyboard")} hoverable={true}>
-              <Title level={5}>Split keyboard, или Сколько пробегают мои пальцы (В процессе написания)
+              <Title level={5}>Corne клавиатура
               </Title>
               <Flex gap="4px 0" wrap>
                 {Tags.devices}
                 {Tags.programming}
               </Flex>
-              <Paragraph style={{ marginTop: "10px" }}>11 ноября 2024 г.</Paragraph>
+              <Paragraph style={{ marginTop: "10px" }}>5 февраля 2025 г.</Paragraph>
             </Card.Grid>
             <Card.Grid style={gridStyle} onClick={() => navigate("/uses")} hoverable={true}>
               <Title level={5}>Что я использую
