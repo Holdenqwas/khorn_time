@@ -5,7 +5,7 @@ import BlogPage from "../../pages/blog";
 import AboutMePage from "../../pages/about_me";
 import ProjectsPage from "../../pages/projects";
 import UsesPage from "../../pages/uses";
-import SpliteKeyboardPage from "../../pages/blog/splite_keyboard";
+import SplitKeyboardPage from "../../pages/blog/splite_keyboard";
 import ConnectAlicePage from "../../pages/connect_alice";
 
 
@@ -20,7 +20,7 @@ const RoutePaths = () => {
 
       <Route path="*" element={<WelcomePage />} />
       <Route path="blog" element={<BlogPage />} />
-      <Route path="blog/splite_keyboard" element={<SpliteKeyboardPage />} />
+      <Route path="blog/splite_keyboard" element={<SplitKeyboardPage />} />
 
     </Routes>
   )

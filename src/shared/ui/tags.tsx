@@ -22,7 +22,7 @@ class Tags {
         программирование
     </Tag>;
     static devices = <Tag bordered={true} color="success">
-        переферия
+        периферия
     </Tag>
     static opinion = <Tag bordered={true} color="purple">
         мнение
