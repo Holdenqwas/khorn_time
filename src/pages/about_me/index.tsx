@@ -38,7 +38,7 @@ const AboutMePage = () => {
               href="https://habr.com/ru/companies/vertdider/articles/403823/" target="_blank">
               CS50 от Гарвардского университета
             </Link>. Эти занятия позволили получить базу в информатике и программировании, что стало основой
-            для дальнейшего развития. Главное, это курс подарил любовь к програграммированию, премного благодарен всем&nbsp;
+            для дальнейшего развития. Главное, этот курс подарил любовь к программированию, премного благодарен всем&nbsp;
             <Link
               href="https://cs50.harvard.edu/x/2023/" target="_blank">
               создателям
@@ -50,15 +50,15 @@ const AboutMePage = () => {
           </Paragraph>
 
           <Paragraph>
-            Дальнейшее свое обучение продолжил на платформе&nbsp;
+            Дальнейшее обучение продолжил на платформе&nbsp;
             <Link
               href="https://stepik.org/users/250908809/profile" target="_blank">
               Stepik
-            </Link>. Познал удовольствие получения сертификатов и решения задач.
+            </Link>. Познал удовольствие от получения сертификатов и решения задач.
           </Paragraph>
           <Paragraph>
             Пробовал себя в различных направлениях IT, таких как Data Science и машинное обучение,
-            веб- и бэкенд-разработка, DevOps. После получения этого опыта остановился веб- и бэкенд-разработке с упором на бэк,
+            веб- и бэкенд-разработка, DevOps. После получения этого опыта остановился на веб- и бэкенд-разработке с упором на бэкенд,
             в которой активно развиваюсь и специализируюсь в настоящее время.
             В качестве отдыха и развлечения от работы занимаюсь разработкой игр.
           </Paragraph>
@@ -82,48 +82,33 @@ const AboutMePage = () => {
             </Space>
           </div>
 
-          {/* Скилы */}
+          {/* Навыки */}
           <Title level={3}>Навыки</Title>
           <Row>
             <Col span={12}>
               <Card title="Backend" bordered={false}>
-                Последний год делал приложение на FastAPI, c базой на PostgreSQL, использовал ORM библиотеку SQLAlchemy.
+                Последний год делал приложение на FastAPI с базой на PostgreSQL, использовал ORM библиотеку SQLAlchemy.
               </Card>
             </Col>
             <Col span={12}>
               <Card title="Frontend" bordered={false}>
-                Делал приложения на Typescript, React, с использованием инструмента сборки Rsbuild.
+                Делал приложения на TypeScript, React, с использованием инструмента сборки Rsbuild.
               </Card>
             </Col>
           </Row>
           <Row>
             <Col span={12}>
               <Card title="DevOps" bordered={false}>
-                Был опыт использования Docker, ansible, vagrant.
+                Был опыт использования Docker, Ansible, Vagrant.
               </Card>
             </Col>
             <Col span={12}>
               <Card title="Data Science" bordered={false}>
-                Есть навыки анализа данных на Python c применением Pandas and NumPy, 
-                применял scikit-learn, графики рисовал в основном на plotly.
+                Есть навыки анализа данных на Python с применением Pandas и NumPy, 
+                применял scikit-learn, графики рисовал в основном на Plotly.
               </Card>
             </Col>
           </Row>
-
-          {/* <Divider />
-          <Title level={3}>Интересы</Title>
-          <Paragraph>
-            I enjoy working on open-source projects, reading about technology advancements,
-             and collaborating with people on creative ideas. In my free time, I like hiking and exploring new places.
-          </Paragraph>
-
-          <Divider />
-          <Title level={3}>Achievements</Title>
-          <Paragraph>
-            - Completed XYZ certification in software development<br />
-            - Built a project that helped increase efficiency by 20% in my previous role<br />
-            - Speaker at ABC tech conference in 2023
-          </Paragraph> */}
         </Card>
       </Content>
     </Layout>
